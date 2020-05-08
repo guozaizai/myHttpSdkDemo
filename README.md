@@ -1,5 +1,5 @@
 # myHttpSdkDemo
-
+# 如何在项目中快速集成
 #1.在项目根目录的build.gradle的repositories 下面添加
 # https://raw.githubusercontent.com/guozaizai/androidsdk/master
 
