@@ -8,10 +8,10 @@ android X以下的使用
     maven { url "https://raw.githubusercontent.com/guozaizai/androidsdk/master" }
 
 第二步：在app目录的build.gradle的dependencies  添加依赖
-andoid X使用
-    implementation 'com.xm:httpApiX:1.2'
-android X以下的使用
-    implementation 'com.xm:httpapi:1.2'
+#andoid X使用
+    #implementation 'com.xm:httpApiX:1.2'
+#android X以下的使用
+    #implementation 'com.xm:httpapi:1.2'
 
 第三步：在app目录的build.gradle的android的defaultConfig 下面需要加如下配置
  javaCompileOptions {
