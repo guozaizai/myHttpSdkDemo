@@ -8,7 +8,7 @@ android X以下的使用
 
 第二步：在app目录的build.gradle的dependencies  添加依赖       
 andoid X使用       
-    implementation 'com.xm:httpApiX:1.0.0'    
+    implementation 'com.xm:httpApiX:1.0.1'    
 android X以下的使用    
     implementation 'com.xm:httpapi:1.0.1'    
 
