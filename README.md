@@ -18,6 +18,7 @@ android X以下的使用
           includeCompileClasspath true
       }
  }
+ #
  # 1.0.0
  用rxjava写的基于okhttp的网络请求框架，支持activity和fragment的mvp形式或者页面直接请求，还有一些常用的工具类。
 
