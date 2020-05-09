@@ -10,7 +10,7 @@ android X以下的使用
 andoid X使用       
     implementation 'com.xm:httpApiX:1.0.0'    
 android X以下的使用    
-    implementation 'com.xm:httpapi:1.0.0'    
+    implementation 'com.xm:httpapi:1.0.1'    
 
 第三步：在app目录的build.gradle的android的defaultConfig 下面需要加如下配置      
  javaCompileOptions {
