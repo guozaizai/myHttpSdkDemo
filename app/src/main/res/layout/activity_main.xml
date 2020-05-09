@@ -18,7 +18,13 @@
         android:id="@+id/btn_next_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="网络请求界面" />
+        android:text="MVP网络请求界面" />
+
+    <Button
+        android:id="@+id/btn_next_page2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="直接网络请求界面" />
 
 
 </LinearLayout>

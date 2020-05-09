@@ -18,7 +18,7 @@ public class RequestPresenter extends BasePresenter<RequestActivity,RequestModel
 
     @Override
     public void load(PwdLoginRequest pwdLoginRequest) {
-        model.getData(pwdLoginRequest,request(data -> getView().setData((LoginResult)data),true));
+        model.getData(pwdLoginRequest,request(data -> getView().setData((LoginResult)data)));
     }
 
 }

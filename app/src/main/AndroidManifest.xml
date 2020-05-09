@@ -26,6 +26,8 @@
         </activity>
 
         <activity android:name=".View.RequestActivity"/>
+
+        <activity android:name=".View.Request2Activity"/>
     </application>
 
 

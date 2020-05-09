@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.widget.Button;
+
 import com.xm.httpapi.BaseMyView.IosAlertDialog;
 import com.xm.httpapi.BaseView.BaseActivity;
+
 import myapp.com.xm.myapplication.R;
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;
@@ -17,7 +19,7 @@ import permissions.dispatcher.RuntimePermissions;
 @RuntimePermissions
 public class MainActivity extends BaseActivity {
 
-    private Button btnCallPhone, btnNextPage;
+    private Button btnCallPhone, btnNextPage, btnNextPage2;
 
 
     @Override
@@ -29,8 +31,10 @@ public class MainActivity extends BaseActivity {
     protected void initData(Bundle savedInstanceState) {
         btnCallPhone = findViewById(R.id.btn_call_phone);
         btnNextPage = findViewById(R.id.btn_next_page);
+        btnNextPage2 = findViewById(R.id.btn_next_page2);
         btnCallPhone.setOnClickListener(v -> MainActivityPermissionsDispatcher.callPhoneWithCheck(this));
-        btnNextPage.setOnClickListener(v->intent(RequestActivity.class));
+        btnNextPage.setOnClickListener(v -> intent(RequestActivity.class));
+        btnNextPage2.setOnClickListener(v -> intent(Request2Activity.class));
     }
 
     @Override
