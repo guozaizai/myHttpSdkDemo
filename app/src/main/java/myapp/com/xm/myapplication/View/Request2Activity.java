@@ -23,7 +23,7 @@ public class Request2Activity extends BaseActivity {
     protected void initData(Bundle savedInstanceState) {
         tvName = findViewById(R.id.tv_name);
         new Api().getDefault()
-                .api(new PwdLoginRequest("18502189235", "yf123456"))
+                .api(new PwdLoginRequest("13712345678", "123456"))
                 .compose(new ComTransformer<>())
                 .subscribe(request(data -> getData((LoginResult) data)));
     }

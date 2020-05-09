@@ -21,7 +21,7 @@ public class RequestActivity extends BaseMVPActivity<RequestPresenter, RequestAc
     @Override
     protected void initData(Bundle savedInstanceState) {
         tvName=findViewById(R.id.tv_name);
-        PwdLoginRequest pwdLoginRequest = new PwdLoginRequest("18502189235", "yf123456");
+        PwdLoginRequest pwdLoginRequest = new PwdLoginRequest("13712345678", "123456");
         presenter.load(pwdLoginRequest);
     }
 
