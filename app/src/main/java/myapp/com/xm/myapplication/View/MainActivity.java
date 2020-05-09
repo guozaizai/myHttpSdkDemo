@@ -1,4 +1,4 @@
-package myapp.com.xm.myapplication;
+package myapp.com.xm.myapplication.View;
 
 import android.Manifest;
 import android.content.Intent;
@@ -7,10 +7,9 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.widget.Button;
-
 import com.xm.httpapi.BaseMyView.IosAlertDialog;
 import com.xm.httpapi.BaseView.BaseActivity;
-
+import myapp.com.xm.myapplication.R;
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;
 import permissions.dispatcher.RuntimePermissions;
@@ -18,7 +17,8 @@ import permissions.dispatcher.RuntimePermissions;
 @RuntimePermissions
 public class MainActivity extends BaseActivity {
 
-    private Button btnCallPhone;
+    private Button btnCallPhone, btnNextPage;
+
 
     @Override
     protected int getLayoutId() {
@@ -28,7 +28,9 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initData(Bundle savedInstanceState) {
         btnCallPhone = findViewById(R.id.btn_call_phone);
+        btnNextPage = findViewById(R.id.btn_next_page);
         btnCallPhone.setOnClickListener(v -> MainActivityPermissionsDispatcher.callPhoneWithCheck(this));
+        btnNextPage.setOnClickListener(v->intent(RequestActivity.class));
     }
 
     @Override
@@ -63,13 +65,13 @@ public class MainActivity extends BaseActivity {
                     Uri uri = Uri.fromParts("package", MainActivity.this.getPackageName(), null);
                     intent.setData(uri);
                     startActivity(intent);
-                }).setNegativeButton("取消", v -> {}).show();
+                }).setNegativeButton("取消", v -> {
+        }).show();
     }
 
     /**
      * 权限回调，调用PermissionsDispatcher的回调方法
      * 类名+PermissionsDispatcher哦
-     *
      */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
