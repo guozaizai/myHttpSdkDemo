@@ -10,12 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
+import com.xm.httpapi.BaseApi.ComObserver;
+import com.xm.httpapi.BaseApiInterface.OnLoadingListener;
+import com.xm.httpapi.BaseApiInterface.ProgressManageError;
 import java.util.Map;
 
-
-import static com.google.gson.internal.$Gson$Types.getRawType;
 
 /**
  *
@@ -73,5 +72,21 @@ public abstract class BaseFragment extends Fragment {
 
     protected void toast(String content) {
         Toast.makeText(getContext(), content, Toast.LENGTH_SHORT).show();
+    }
+
+    protected ComObserver request(OnLoadingListener onLoadingListener) {
+        return request(onLoadingListener, true);
+    }
+
+    protected ComObserver request(OnLoadingListener onLoadingListener, boolean isLoading) {
+        return new ComObserver(onLoadingListener, getContext(), isLoading);
+    }
+
+    protected ComObserver request(OnLoadingListener onLoadingListener, ProgressManageError progressManageError) {
+        return request(onLoadingListener, progressManageError, true);
+    }
+
+    protected ComObserver request(OnLoadingListener onLoadingListener, ProgressManageError progressManageError, boolean isLoading) {
+        return new ComObserver(onLoadingListener, progressManageError, getContext(), isLoading);
     }
 }

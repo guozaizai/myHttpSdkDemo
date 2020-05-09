@@ -1,5 +1,6 @@
 package com.xm.httpapi.BaseView;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.xm.httpapi.BaseApi.ComObserver;
+import com.xm.httpapi.BaseApiInterface.OnLoadingListener;
+import com.xm.httpapi.BaseApiInterface.ProgressManageError;
 import com.xm.httpapi.BaseUtils.BaseUtils;
 import com.xm.httpapi.R;
 
@@ -232,6 +236,22 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
         }
         return super.onTouchEvent(event);
+    }
+
+    protected ComObserver request(OnLoadingListener onLoadingListener) {
+        return request(onLoadingListener, true);
+    }
+
+    protected ComObserver request(OnLoadingListener onLoadingListener, boolean isLoading) {
+        return new ComObserver(onLoadingListener, this, isLoading);
+    }
+
+    protected ComObserver request(OnLoadingListener onLoadingListener, ProgressManageError progressManageError) {
+        return request(onLoadingListener, progressManageError, true);
+    }
+
+    protected ComObserver request(OnLoadingListener onLoadingListener, ProgressManageError progressManageError, boolean isLoading) {
+        return new ComObserver(onLoadingListener, progressManageError, this, isLoading);
     }
 
 }
