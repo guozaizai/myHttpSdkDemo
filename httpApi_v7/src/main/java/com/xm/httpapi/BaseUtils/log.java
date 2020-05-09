@@ -1,4 +1,4 @@
-package myapp.com.xm.myapplication.Utils;
+package com.xm.httpapi.BaseUtils;
 
 import android.util.Log;
 

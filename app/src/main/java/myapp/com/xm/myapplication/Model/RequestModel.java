@@ -7,7 +7,7 @@ import myapp.com.xm.myapplication.Api;
 import myapp.com.xm.myapplication.IRequest;
 
 public class RequestModel extends BaseModel implements IRequest.IModel {
-    public void getData(PwdLoginRequest request, ComObserver<LoginResult> comObserver){
-        Api.getDefault().api(request).compose(comTransformer).subscribe(comObserver);
+    public void getData(PwdLoginRequest request, ComObserver<LoginResult> comObserver) {
+        new Api().getDefault().api(request).compose(comTransformer).subscribe(comObserver);
     }
 }

@@ -19,6 +19,9 @@ android X以下的使用
       }
  }
  #
+ # V1.0.1
+  把retrofit的构建放在api里面，app直接引用。                     
  # V1.0.0
- 用rxjava写的基于okhttp的网络请求框架，支持activity和fragment的mvp形式或者页面直接请求，还有一些常用的工具类。
+  用rxjava写的基于okhttp的网络请求框架，支持activity和fragment的mvp形式或者页面直接请求，还有一些常用的工具类。
+
 
