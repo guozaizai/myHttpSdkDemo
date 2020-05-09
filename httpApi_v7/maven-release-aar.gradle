@@ -11,7 +11,7 @@ ext {// ext is a gradle closure allowing the declaration of global properties
 //3.maven-输出路径
 uploadArchives {
     repositories.mavenDeployer {
-        repository(url: "file://D:/maven/mysdk")
+        repository(url: "file://D:/maven/mysdk2")
         pom.project {
             groupId project.PUBLISH_GROUP_ID
             artifactId project.PUBLISH_ARTIFACT_ID

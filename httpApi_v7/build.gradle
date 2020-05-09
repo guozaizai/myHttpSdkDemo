@@ -13,6 +13,9 @@ android {
                 includeCompileClasspath true
             }
         }
+        lintOptions {
+            abortOnError false
+        }
     }
 
     buildTypes {
