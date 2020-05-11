@@ -14,6 +14,18 @@ public class Api extends BaseApi {
         super(BuildConfig.URL);
     }
 
+    public static class ApiSingle {
+        private static Api api = new Api();
+    }
+
+    public static Api getInstance() {
+        return ApiSingle.api;
+    }
+
+    public static ApiService getApi() {
+        return getInstance().getDefault();
+    }
+
     public ApiService getDefault() {
         return service == null ? service = getRetrofit().create(ApiService.class) : service;
     }
