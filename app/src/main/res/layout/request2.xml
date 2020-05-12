@@ -9,4 +9,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btn_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请求不带头" />
+
+    <Button
+        android:id="@+id/btn_request_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请求带头" />
+
 </LinearLayout>

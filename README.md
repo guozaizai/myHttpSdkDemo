@@ -8,9 +8,9 @@ android X以下的使用
 
 第二步：在app目录的build.gradle的dependencies  添加依赖       
 andoid X使用       
-    implementation 'com.xm:httpApiX:1.0.1'    
+    implementation 'com.xm:httpApiX:1.0.2'    
 android X以下的使用    
-    implementation 'com.xm:httpapi:1.0.1'    
+    implementation 'com.xm:httpapi:1.0.2'    
 
 第三步：在app目录的build.gradle的android的defaultConfig 下面需要加如下配置      
  javaCompileOptions {
@@ -19,6 +19,8 @@ android X以下的使用
       }
  }
  #
+ # V1.0.2
+  支持自定义请求头，支持https请求
  # V1.0.1
   把retrofit的构建放在api里面，app直接引用。                     
  # V1.0.0

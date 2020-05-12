@@ -1,7 +1,6 @@
 package myapp.com.xm.myapplication;
 
 import com.xm.httpapi.BaseApi.BaseApi;
-
 /**
  *
  */
@@ -24,6 +23,10 @@ public class Api extends BaseApi {
 
     public static ApiService getApi() {
         return getInstance().getDefault();
+    }
+
+    public void clearApiService() {
+        if (service != null) service = null;
     }
 
     public ApiService getDefault() {
