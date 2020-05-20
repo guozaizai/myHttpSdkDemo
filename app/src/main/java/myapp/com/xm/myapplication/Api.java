@@ -1,6 +1,8 @@
 package myapp.com.xm.myapplication;
 
 import com.xm.httpapi.BaseApi.BaseApi;
+import com.xm.httpapi.BaseApi.BaseResponseEntryName;
+
 /**
  *
  */
@@ -10,7 +12,7 @@ public class Api extends BaseApi {
     private ApiService service;
 
     public Api() {
-        super(BuildConfig.URL);
+        super(BuildConfig.URL,10,0);
     }
 
     public static class ApiSingle {

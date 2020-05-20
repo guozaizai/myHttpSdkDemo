@@ -11,10 +11,7 @@ import myapp.com.xm.myapplication.Model.RequestModel;
 import myapp.com.xm.myapplication.View.RequestActivity;
 
 public class RequestPresenter extends BasePresenter<RequestActivity,RequestModel>  implements IRequest.IPresenter {
-    @Override
-    protected Map<String, List<String>> getMap() {
-        return null;
-    }
+
 
     @Override
     public void load(PwdLoginRequest pwdLoginRequest) {

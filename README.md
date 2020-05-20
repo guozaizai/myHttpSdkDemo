@@ -10,7 +10,7 @@ android X以下的使用
 andoid X使用       
     implementation 'com.xm:httpApiX:1.0.2'    
 android X以下的使用    
-    implementation 'com.xm:httpapi:1.0.2'    
+    implementation 'com.xm:httpapi:1.0.3'    
 
 第三步：在app目录的build.gradle的android的defaultConfig 下面需要加如下配置      
  javaCompileOptions {
@@ -19,6 +19,11 @@ android X以下的使用
       }
  }
  #
+ # V1.0.3
+   支持自定义请求code成功的值，支持自定义loading，支持请求返回的code可以映射成后台的key为｛code，statusCode｝，
+   message可以映射成后台的key为 {message,Msg, msg, error, err, errorMsg, errorMessage},
+   data可以映射成后台的key为｛data，datas，response｝
+   后续有合理的key再增加
  # V1.0.2
   支持自定义请求头，支持https请求
  # V1.0.1
