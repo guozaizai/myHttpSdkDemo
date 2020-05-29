@@ -10,15 +10,21 @@ android X以下的使用
 andoid X使用       
     implementation 'com.xm:httpApiX:1.0.2'    
 android X以下的使用    
-    implementation 'com.xm:httpapi:1.0.3'    
+    implementation 'com.xm:httpapi:1.0.4'    
 
 第三步：在app目录的build.gradle的android的defaultConfig 下面需要加如下配置      
  javaCompileOptions {
      annotationProcessorOptions {
           includeCompileClasspath true
       }
- }
+ }                           
+ 
+ 第四步：在你自己的applicaiton中添加：HApi.init(getApplication());
  #
+ # V1.0.4
+ 网络请求可以随时取消，新增一些常用的注解，自定义一个code用于处理类似于 token失效跳其他页面的效果，需要配置arouter ，并且在
+ 你需要跳转的页面需要加注解: @Route(path = "/ui/loginActivity") 
+  
  # V1.0.3
    支持自定义请求code成功的值，支持自定义loading，支持请求返回的code可以映射成后台的key为｛code，statusCode｝，
    message可以映射成后台的key为 {message,Msg, msg, error, err, errorMsg, errorMessage},
