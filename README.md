@@ -5,6 +5,7 @@ andoid X使用
     maven { url "https://gitee.com/richard-guo/androidsdkX/raw/master" }     
 android X以下的使用         
     maven { url "https://gitee.com/richard-guo/androidsdk/raw/master" }   
+在dependencies中添加  classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.4'
 
 第二步：在app目录的build.gradle的dependencies  添加依赖       
 andoid X使用       
@@ -17,7 +18,8 @@ android X以下的使用
      annotationProcessorOptions {
           includeCompileClasspath true
       }
- }                           
+ }   
+在app目录顶部添加 apply plugin: 'android-aspectjx'
  
  第四步：在你自己的applicaiton中添加：HApi.init(getApplication());
  #
