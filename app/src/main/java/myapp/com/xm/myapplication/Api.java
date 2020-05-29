@@ -1,7 +1,6 @@
 package myapp.com.xm.myapplication;
 
 import com.xm.httpapi.BaseApi.BaseApi;
-import com.xm.httpapi.BaseApi.BaseResponseEntryName;
 
 /**
  *
@@ -10,9 +9,13 @@ import com.xm.httpapi.BaseApi.BaseResponseEntryName;
 public class Api extends BaseApi {
 
     private ApiService service;
+    public static String url = "http://api.yuanfusc.com:82/tmsapp1/";
+    public static int timeOut = 100;
+    public static int ReponseSucessCode = 0;
+    public static int ReponseTokenInvalidCode = 2508;
 
     public Api() {
-        super(BuildConfig.URL,10,0);
+        super(url, timeOut, ReponseSucessCode, ReponseTokenInvalidCode);
     }
 
     public static class ApiSingle {

@@ -3,6 +3,7 @@ package myapp.com.xm.myapplication.View;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.xm.httpapi.BaseUtils.Toast;
 import com.xm.httpapi.BaseView.BaseMVPActivity;
 import myapp.com.xm.myapplication.IRequest;
 import myapp.com.xm.myapplication.Model.LoginResult;
@@ -32,7 +33,7 @@ public class RequestActivity extends BaseMVPActivity<RequestPresenter, RequestAc
 
     @Override
     public void setData(LoginResult loginResult) {
-        toast("成功");
+        Toast.show("成功");
         tvName.setText(loginResult.toString());
     }
 

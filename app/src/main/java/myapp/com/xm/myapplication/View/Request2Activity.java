@@ -3,7 +3,6 @@ package myapp.com.xm.myapplication.View;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-import com.xm.httpapi.BaseApi.ComTransformer;
 import com.xm.httpapi.BaseView.BaseActivity;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,22 +23,21 @@ public class Request2Activity extends BaseActivity {
     @Override
     protected void initData(Bundle savedInstanceState) {
         tvName = findViewById(R.id.tv_name);
-        btnRequest=findViewById(R.id.btn_request);
+        btnRequest = findViewById(R.id.btn_request);
         btnRequestHead = findViewById(R.id.btn_request_head);
         btnRequest.setOnClickListener(v -> {
             Api.getInstance().clearHeadMap();
-            Api.getApi().api(new PwdLoginRequest("13712345678", "123456"))
-                    .compose(new ComTransformer<>())
-                    .subscribe(request(data -> getData((LoginResult) data)));
+            subscribe(Api.getApi().api(new PwdLoginRequest("13712345678", "123456")),
+                    request(data -> getData((LoginResult) data)));
         });
+
         btnRequestHead.setOnClickListener(v -> {
             Api.getInstance().clearApiService();
             Map<String, String> map = new HashMap<>();
             map.put("token", "123456");
             Api.getInstance().setHeadMap(map);
-            Api.getApi().api(new PwdLoginRequest("13712345678", "123456"))
-                    .compose(new ComTransformer<>())
-                    .subscribe(request(data -> getData((LoginResult) data)));
+            subscribe(Api.getApi().api(new PwdLoginRequest("13712345678", "123456")),
+                    request(data -> getData((LoginResult) data)));
         });
     }
 

@@ -6,11 +6,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.view.View;
 import android.widget.Button;
 
+import com.xm.httpapi.Annotation.Async;
+import com.xm.httpapi.Annotation.Delay;
 import com.xm.httpapi.BaseMyView.IosAlertDialog;
 import com.xm.httpapi.BaseView.BaseActivity;
-
 import myapp.com.xm.myapplication.R;
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;
@@ -32,16 +34,22 @@ public class MainActivity extends BaseActivity {
         btnCallPhone = findViewById(R.id.btn_call_phone);
         btnNextPage = findViewById(R.id.btn_next_page);
         btnNextPage2 = findViewById(R.id.btn_next_page2);
-        btnCallPhone.setOnClickListener(v -> MainActivityPermissionsDispatcher.callPhoneWithCheck(this));
+        btnCallPhone.setOnClickListener(v ->  changeView());
         btnNextPage.setOnClickListener(v -> intent(RequestActivity.class));
         btnNextPage2.setOnClickListener(v -> intent(Request2Activity.class));
     }
 
     @Override
     protected String showTitle() {
-        return "测试";
+        return "chen";
     }
 
+    @Async
+    void changeView(){
+        btnCallPhone.setText("1111");
+    }
+
+    @Delay(key = "call", delay = 2000)
     @NeedsPermission(Manifest.permission.CALL_PHONE)
     void callPhone() {
         Intent intent = new Intent(Intent.ACTION_CALL);

@@ -8,6 +8,9 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.4'
+        classpath 'org.aspectj:aspectjtools:1.8.9'
+        classpath "com.tencent.bugly:tinker-support:1.1.5"
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -17,8 +20,10 @@ buildscript {
 
 allprojects {
     repositories {
+      // maven { url "file://D:/maven/androidsdk" }
         maven { url 'https://maven.aliyun.com/repository/jcenter'}
         maven { url 'https://jitpack.io' }
+        mavenCentral()
         maven { url "https://gitee.com/richard-guo/androidsdk/raw/master" }
         google()
         jcenter()

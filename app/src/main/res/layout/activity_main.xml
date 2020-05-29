@@ -11,7 +11,7 @@
         android:id="@+id/btn_call_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="拨打电话" />
+        android:text="延迟2s拨打电话" />
 
 
     <Button
